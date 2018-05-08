@@ -1,2 +1,2 @@
 # smb-version
-Python script to get Samba Server Version
+This is a python script to get the version of samba server.
