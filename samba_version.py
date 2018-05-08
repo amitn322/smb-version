@@ -103,7 +103,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("-v", "--verbose", help="Display Verbose Message", action="store_true")
 parser.add_argument("-d", "--debug", help="Debug Mode On", action="store_true")
 parser.add_argument("-s", "--server", help="Samba Server Hostname or IP Address")
-parser.add_argument("-totalHeaderLength", "--trace", help="Display Everything", action="store_true")                 
+parser.add_argument("-t", "--trace", help="Display Everything", action="store_true")                 
 args = parser.parse_args()
 
 if not args.server:
