@@ -4,7 +4,7 @@
    Email: amit@amitnepal.com
    
    Python Script to get the Samba ipVersion since the enum4linux stopped working.
-   This script sends a smbclient -L command, sniffs the packets and gets the samba ipVersion.
+   This script sends a smbclient -L command, sniffs the packets and gets the samba Version.
    The sniffing part is based on : https://www.binarytides.com/python-packet-sniffer-code-linux/
    
    Disclaimer: This tool is provided as is with no warranty what so ever. This tools is for educational purposees only and You are solely responsible for the usage of this script. 
