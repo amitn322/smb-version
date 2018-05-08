@@ -95,7 +95,7 @@ def process_packets(packet, server):
                 except:
                     dataInPacket = printableCharacters(dataInPacket)  
                 if "UnixSamba" in dataInPacket:
-                        print re.findall(r"(?<=UnixSamba\s)\S+",dataInPacket)
+                        print re.findall(r"(?<=UnixSamba\s)\S+",dataInPacket)[0]
                 if verbose:
                     print dataInPacket
 
