@@ -4,7 +4,7 @@
    Email: amit@amitnepal.com
    
    Python Script to get the Samba ipVersion since the enum4linux stopped working.
-   This script sends a smbclient -L command, sniffs the packets and gets the samba Version.
+   This script sends a smbclient -L command, sniffs the packets and gets the samba ipVersion.
    The sniffing part is based on : https://www.binarytides.com/python-packet-sniffer-code-linux/
    
    Disclaimer: This tool is provided as is with no warranty what so ever. This tools is for educational purposees only and You are solely responsible for the usage of this script. 
@@ -94,8 +94,8 @@ def process_packets(packet, server):
                     dataInPacket = unicodedata.normalize('NFKD', dataInPacket).encode('ascii','ignore')
                 except:
                     dataInPacket = printableCharacters(dataInPacket)  
-                if "UnixSamba" in dataInPacket:
-                        print re.findall(r"(?<=UnixSamba\s)\S+",dataInPacket)[0]
+                if searchString in dataInPacket:
+                        print re.findall(r"(?<={0}\s)\S+".format(searchString),dataInPacket)[0]
                 if verbose:
                     print dataInPacket
 
@@ -103,7 +103,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("-v", "--verbose", help="Display Verbose Message", action="store_true")
 parser.add_argument("-d", "--debug", help="Debug Mode On", action="store_true")
 parser.add_argument("-s", "--server", help="Samba Server Hostname or IP Address")
-parser.add_argument("-t", "--trace", help="Display Everything", action="store_true")                 
+parser.add_argument("-totalHeaderLength", "--trace", help="Display Everything", action="store_true")                 
 args = parser.parse_args()
 
 if not args.server:
